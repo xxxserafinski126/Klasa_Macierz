@@ -1,53 +1,52 @@
 #include <iostream>
 
-// Klasa Macierz reprezentuje macierz 2x2 i obs³uguje podstawowe operacje matematyczne na macierzach.
 class Macierz {
 private:
-    double tab[2][2]; // Prywatna tablica 2x2 przechowuj¹ca elementy macierzy.
+    double tab[2][2]; // Prywatna tablica 2x2
 
 public:
-    // Konstruktor domyœlny.
+    // Konstruktor domyslny.
     Macierz();
 
-    // Konstruktor kopiuj¹cy.
+    // Konstruktor kopiujacy.
     Macierz(const Macierz& copy);
 
     // Destruktor.
     ~Macierz();
 
-    // Operator mno¿enia macierzy.
+    // Operator mnozenia macierzy.
     Macierz operator*(const Macierz& copy) const;
 
     // Operator dodawania macierzy.
     Macierz operator+(const Macierz& copy) const;
 
-    // Operator mno¿enia macierzy przez skalar.
+    // Operator mnozenia macierzy przez skalar.
     Macierz operator*(const double x) const;
 
     // Operator przypisania.
     Macierz& operator=(const Macierz& copy);
 
-    // Operator porównania.
+    // Operator porownania.
     bool operator==(const Macierz& copy) const;
 
     // Operator dodawania i przypisania.
     Macierz& operator+=(const Macierz& copy);
 
-    // Operator mno¿enia i przypisania macierzy.
+    // Operator mnozenia i przypisania macierzy.
     Macierz& operator*=(const Macierz& copy);
 
-    // Operator mno¿enia przez skalar i przypisania.
+    // Operator mnozenia przez skalar i przypisania.
     Macierz& operator*=(const double x);
 
-    // Przyjacielski operator wyjœcia, umo¿liwiaj¹cy wypisywanie macierzy.
+    // Przyjacielski operator wyjscia, umozliwiajacy wypisywanie macierzy.
     friend std::ostream& operator<<(std::ostream& s, const Macierz& m);
 
-    // Metoda ustawiaj¹ca wartoœæ elementu.
+    // Metoda ustawiajaca wartosc elementu.
     void set(int i, int j, double x);
 
-    // Metoda pobieraj¹ca wartoœæ elementu.
+    // Metoda pobierajaca wartosc elementu.
     double get(int i, int j) const;
 
-    // Metoda transponuj¹ca macierz.
+    // Metoda transponujaca macierz.
     void transpozycja();
 };
